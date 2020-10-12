@@ -84,25 +84,9 @@ namespace Dialog_v1._0
                 }
                 choiceHero = Convert.ToInt32(Console.ReadLine());
 
-                switch(choiceHero)
+                foreach (NpcDialogPart value in masNpc[index].heroDialogs[choiceHero - 1].npcDialogs)
                 {
-                    case 1:
-                        foreach (NpcDialogPart value in masNpc[index].heroDialogs[choiceHero - 1].npcDialogs)
-                        {
-                            Console.WriteLine(value.replicaNpc);
-                            //i = 1;
-                            //foreach (HeroDialogPart value1 in masNpc[1].heroDialogs)
-                            //{
-                            //    Console.WriteLine(i + ") " + value1.replicaHero);
-                            //    i++;
-                            //}
-                            //choiceHero = Convert.ToInt32(Console.ReadLine());
-                        }
-
-                        break;
-                    case 2:
-                        Console.WriteLine("КIНЕЦЬ");
-                        return;
+                    Console.WriteLine(value.replicaNpc);
                 }
                 index++;
                 //break;
