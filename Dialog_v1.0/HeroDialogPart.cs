@@ -8,14 +8,12 @@ namespace Dialog_v1._0
 {
     public class HeroDialogPart
     {
-        public HeroDialogPart(string text, bool end)
+        public HeroDialogPart(string text)
         {
             replicaHero = text;
             npcDialogs = new List<NpcDialogPart>();
-            exitHero = end;
         }
 
-        public bool exitHero { get; set; }
         public string replicaHero { get; set; }
         public List<NpcDialogPart> npcDialogs;
     }
