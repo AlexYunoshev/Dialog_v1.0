@@ -16,6 +16,7 @@ namespace Dialog_v1._0
             int choiceNpc;
 
             List<NpcDialogPart> masNpc = new List<NpcDialogPart>();
+            List<HeroDialogPart> masHero = new List<HeroDialogPart>();
 
             NpcDialogPart npc1 = new NpcDialogPart("NPC: Привiт, допоможи менi дiстатись iншого мiста.");
 
