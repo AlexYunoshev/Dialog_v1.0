@@ -18,48 +18,65 @@ namespace Dialog_v1._0
             List<NpcDialogPart> masNpc = new List<NpcDialogPart>();
             List<HeroDialogPart> masHero = new List<HeroDialogPart>();
 
-            NpcDialogPart npc1 = new NpcDialogPart("NPC: Привiт, допоможи менi дiстатись iншого мiста.");
+            ////////////////////////////////////////////////////////////////////////////////////////////////
 
-            HeroDialogPart hero1_1 = new HeroDialogPart("HERO: Так, допоможу!");
-            HeroDialogPart hero1_2 = new HeroDialogPart("HERO: Нi, не допоможу");
+            NpcDialogPart npc0 = new NpcDialogPart("NPC: Привiт, допоможи менi дiстатись iншого мiста.");
+
+            HeroDialogPart hero0_1 = new HeroDialogPart("HERO: Так, допоможу!");
+            HeroDialogPart hero0_2 = new HeroDialogPart("HERO: Нi, не допоможу");
+
+            npc0.heroDialogs.Add(hero0_1);
+            npc0.heroDialogs.Add(hero0_2);
+
+            NpcDialogPart npc1 = new NpcDialogPart("NPC: Дякую, я дам тобi 100 монет у нагороду.");
+
+            hero0_1.npcDialogs.Add(npc1);
+
+
+            HeroDialogPart hero1_1 = new HeroDialogPart("HERO: Ок, скажу коли буду готовий.");
+            HeroDialogPart hero1_2 = new HeroDialogPart("HERO: 100 монет дуже мало!");
+
+
 
             npc1.heroDialogs.Add(hero1_1);
             npc1.heroDialogs.Add(hero1_2);
 
-            NpcDialogPart npc2 = new NpcDialogPart("NPC: Дякую, я дам тобi 100 монет у нагороду.");
+            NpcDialogPart npc2 = new NpcDialogPart("NPC: Не маю бiльше, я дуже бiдний.");
 
-            hero1_1.npcDialogs.Add(npc2);
+            hero1_2.npcDialogs.Add(npc2);
 
-
-            HeroDialogPart hero2_1 = new HeroDialogPart("HERO: Ок, скажу коли буду готовий.");
-            HeroDialogPart hero2_2 = new HeroDialogPart("HERO: 100 монет дуже мало!");
-
-
+            HeroDialogPart hero2_1 = new HeroDialogPart("HERO: Ок, нехай буде 100 монет.");
+            HeroDialogPart hero2_2 = new HeroDialogPart("HERO: Тодi сам добирайся");
 
             npc2.heroDialogs.Add(hero2_1);
             npc2.heroDialogs.Add(hero2_2);
 
-            NpcDialogPart npc3 = new NpcDialogPart("NPC: Не маю бiльше, я дуже бiдний.");
 
-            hero2_2.npcDialogs.Add(npc3);
+            NpcDialogPart npc3 = new NpcDialogPart("NPC: Дякую");
 
-            HeroDialogPart hero3_1 = new HeroDialogPart("HERO: Ок, нехай буде 100 монет.");
-            HeroDialogPart hero3_2 = new HeroDialogPart("HERO: Тодi сам добирайся");
+            hero2_1.npcDialogs.Add(npc3);
 
-            npc3.heroDialogs.Add(hero3_1);
-            npc3.heroDialogs.Add(hero3_2);
+            ////////////////////////////////////////////////////////////////////////////////////////////////
 
+            masNpc.Add(npc0); // 0
+            masNpc.Add(npc1); // 1
+            masNpc.Add(npc2); // 2
+            masNpc.Add(npc3); // 3
 
-            NpcDialogPart npc4 = new NpcDialogPart("NPC: Дякую");
+            masHero.Add(hero0_1); // 0
+            masHero.Add(hero0_2); // 1
+            masHero.Add(hero1_1); // 2
+            masHero.Add(hero1_2); // 3
+            masHero.Add(hero2_1); // 4
+            masHero.Add(hero2_2); // 5
 
-            hero3_1.npcDialogs.Add(npc4);
 
 
             while (true)
             {
-                Console.WriteLine(npc1.replicaNpc);
+                Console.WriteLine(masNpc[0].replicaNpc);
                 int i = 1;
-                foreach (HeroDialogPart value in npc1.heroDialogs)
+                foreach (HeroDialogPart value in masNpc[0].heroDialogs)
                 {
                     Console.WriteLine(i + ") " + value.replicaHero);
                     i++;
@@ -69,11 +86,11 @@ namespace Dialog_v1._0
                 switch(choiceHero)
                 {
                     case 1:
-                        foreach (NpcDialogPart value in npc1.heroDialogs[choiceHero - 1].npcDialogs)
+                        foreach (NpcDialogPart value in masNpc[0].heroDialogs[choiceHero - 1].npcDialogs)
                         {
                             Console.WriteLine(value.replicaNpc);
                             i = 1;
-                            foreach (HeroDialogPart value1 in npc2.heroDialogs)
+                            foreach (HeroDialogPart value1 in masNpc[1].heroDialogs)
                             {
                                 Console.WriteLine(i + ") " + value1.replicaHero);
                                 i++;
