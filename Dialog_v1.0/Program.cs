@@ -71,12 +71,13 @@ namespace Dialog_v1._0
             masHero.Add(hero2_2); // 5
 
 
-
+            int index = 0;
+            Console.WriteLine(masNpc[index].replicaNpc);
             while (true)
             {
-                Console.WriteLine(masNpc[0].replicaNpc);
+               
                 int i = 1;
-                foreach (HeroDialogPart value in masNpc[0].heroDialogs)
+                foreach (HeroDialogPart value in masNpc[index].heroDialogs)
                 {
                     Console.WriteLine(i + ") " + value.replicaHero);
                     i++;
@@ -86,24 +87,25 @@ namespace Dialog_v1._0
                 switch(choiceHero)
                 {
                     case 1:
-                        foreach (NpcDialogPart value in masNpc[0].heroDialogs[choiceHero - 1].npcDialogs)
+                        foreach (NpcDialogPart value in masNpc[index].heroDialogs[choiceHero - 1].npcDialogs)
                         {
                             Console.WriteLine(value.replicaNpc);
-                            i = 1;
-                            foreach (HeroDialogPart value1 in masNpc[1].heroDialogs)
-                            {
-                                Console.WriteLine(i + ") " + value1.replicaHero);
-                                i++;
-                            }
-                            choiceHero = Convert.ToInt32(Console.ReadLine());
+                            //i = 1;
+                            //foreach (HeroDialogPart value1 in masNpc[1].heroDialogs)
+                            //{
+                            //    Console.WriteLine(i + ") " + value1.replicaHero);
+                            //    i++;
+                            //}
+                            //choiceHero = Convert.ToInt32(Console.ReadLine());
                         }
 
                         break;
                     case 2:
                         Console.WriteLine("КIНЕЦЬ");
-                        break;
+                        return;
                 }
-                break;
+                index++;
+                //break;
             }
 
 
